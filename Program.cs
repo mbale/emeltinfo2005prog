@@ -34,7 +34,7 @@ namespace emeltinfo2005
             #region "4. Feladat"
             List<int> lotterynumbers = new List<int>();
 
-            foreach (string line in File.ReadAllLines("dat/lottosz.dat"))
+            foreach (string line in File.ReadAllLines("data/lottosz.dat"))
             {
                 string[] numbersbuffer = line.Split(' ');
 
@@ -44,7 +44,7 @@ namespace emeltinfo2005
                 }
             }
 
-            string[] d = File.ReadAllLines("dat/lottosz.dat");
+            string[] d = File.ReadAllLines("data/lottosz.dat");
             Console.WriteLine("A(z) " + linenumber.ToString() + ". soron lévő számok a következők: " + d[linenumber - 1]);
 
             //vagy picit elegánsabban, ám ugyanazzal a végeredménnyel.
@@ -74,13 +74,13 @@ namespace emeltinfo2005
             #endregion
 
             #region "7. Feladat"
-            if (!File.Exists("dat/lotto52.ki"))
+            if (!File.Exists("data/lotto52.ki"))
 	        {
-                File.Copy("dat/lottosz.dat", "dat/lotto52.ki");
+                File.Copy("data/lottosz.dat", "data/lotto52.ki");
 	        }
 
             string newline = string.Join(" ", missingnumbers);
-            File.AppendAllText("dat/lotto52.ki", Environment.NewLine + newline);
+            File.AppendAllText("data/lotto52.ki", Environment.NewLine + newline);
             #endregion
 
             #region "8. Feladat"
